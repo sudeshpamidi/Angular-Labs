@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>{{title}}</h1>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter a FirstName Name" required autofocus [(ngModel)]="firstName" />
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter a LastName Name" required autofocus [(ngModel)]="lastName" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" placeholder="(optional)" [(ngModel)]="email" />
+        </div>
+        <!-- Property Binding: [ ] -->
+        <button type="button" class="btn btn-primary" [disabled]="addNewUser" (click)="onAddUser()">Add User</button> &nbsp;
+        <button type="button" class="btn btn-secondary" (click)='onReset()'>Reset</button>
+    </div>
+
+    <div class="container">
+        <hr />
+        <h3 [ngStyle]="{color: getColor()}">{{'Users:'}}</h3>
+        <div *ngIf="addNewUser ; else noUsers">
+            {{newUser}}
+        </div>
+        <ng-template #noUsers>No users found!!</ng-template>
+    </div>
+
+    <div class="container">
+        <footer class="pull-right">&copy; {{getCurrentYear()}}</footer>
+    </div>
+</div>
