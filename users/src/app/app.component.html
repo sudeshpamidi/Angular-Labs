@@ -17,7 +17,7 @@
             <input type="text" class="form-control" id="email" placeholder="(optional)" [(ngModel)]="email" />
         </div>
         <!-- Property Binding: [ ] -->
-        <button type="button" class="btn btn-primary" [disabled]="addNewUser" (click)="onAddUser()">Add User</button> &nbsp;
+        <button type="button" class="btn btn-primary" (click)="onAddUser()">Add User</button> &nbsp;
         <button type="button" class="btn btn-secondary" (click)='onReset()'>Reset</button>
     </div>
 
@@ -25,7 +25,8 @@
         <hr />
         <h3 [ngStyle]="{color: getColor()}">{{'Users:'}}</h3>
         <div *ngIf="addNewUser ; else noUsers">
-            {{newUser}}
+
+            <p *ngFor="let mountain of mountains">{{mountain}}</p>
         </div>
         <ng-template #noUsers>No users found!!</ng-template>
     </div>

@@ -15,6 +15,7 @@ export class AppComponent {
   lastName : string = '';
   email : string = '';
 
+  mountains : Array<string> = [];
   newUser: string = '';
   addNewUser:boolean = false;
   currentYear: number = 2019;
@@ -29,6 +30,7 @@ export class AppComponent {
 
   onAddUser(): void {
     this.newUser = `${this.firstName} - ${this.lastName}': ${this.email}`;
+    this.mountains.push (this.newUser);
     this.addNewUser = true;
   }
 
