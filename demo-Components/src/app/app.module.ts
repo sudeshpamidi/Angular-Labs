@@ -13,7 +13,7 @@ import { AuthService }  from './services/auth.service';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'footer', component: FooterComponent}
+  {path: 'footer', component: FooterComponent }
 ];
 
 @NgModule({
